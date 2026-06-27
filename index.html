@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="OKSING GEN adalah translator Prokem, Prinem, Pregem, dan Presm berbasis rules OKSING by Oda F.T."
+    />
+    <title>OKSING GEN - Prokem, Prinem, Pregem & Presm Translator</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#translator" aria-label="OKSING GEN">
+          <span class="brand-mark">OK</span>
+          <span>
+            <strong>OKSING GEN</strong>
+            <small>Prokem, Prinem, Pregem & Presm Translator</small>
+          </span>
+        </a>
+        <nav class="nav-tabs" aria-label="Navigasi utama">
+          <button class="nav-tab is-active" data-route="translator" type="button">Translator</button>
+          <button class="nav-tab" data-route="learn" type="button">Zine</button>
+          <button class="nav-tab" data-route="quiz" type="button">Quiz</button>
+          <button class="nav-tab" data-route="rules" type="button">Rules</button>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page is-active" id="translator" data-page="translator">
+          <div class="translator-layout">
+            <section class="panel translator-panel" aria-labelledby="translator-title">
+              <div class="section-kicker">OKSING translator</div>
+              <h1 id="translator-title">Ubah bahasa Indonesia ke bahasa OKSING, atau balik lagi.</h1>
+
+              <div class="control-grid">
+                <label>
+                  <span>Bahasa</span>
+                  <select id="modeSelect">
+                    <option value="prokem">Prokem</option>
+                    <option value="prinem">Prinem</option>
+                    <option value="presm">Presm</option>
+                    <option value="pregem">Pregem</option>
+                  </select>
+                </label>
+
+                <label>
+                  <span>Arah</span>
+                  <select id="directionSelect">
+                    <option value="encode">Indonesia ke OKSING</option>
+                    <option value="decode">OKSING ke Indonesia</option>
+                  </select>
+                </label>
+              </div>
+
+              <label class="text-label" for="inputText">
+                <span>Input</span>
+                <textarea id="inputText" rows="7" spellcheck="false">aku telat sekolah, aku beli roti</textarea>
+              </label>
+
+              <div class="action-row">
+                <button class="primary-btn" id="translateBtn" type="button">Translate</button>
+                <button class="ghost-btn" id="swapBtn" type="button">Balik arah</button>
+                <button class="ghost-btn" id="copyBtn" type="button">Copy hasil</button>
+              </div>
+            </section>
+
+            <aside class="panel output-panel" aria-labelledby="output-title">
+              <div class="section-kicker">Hasil</div>
+              <h2 id="output-title">Output</h2>
+              <div class="result-box" id="resultBox" aria-live="polite"></div>
+              <div class="suggestion-box" id="suggestionBox" hidden></div>
+            </aside>
+          </div>
+
+          <section class="panel breakdown-panel" aria-labelledby="breakdown-title">
+            <div class="section-kicker">Formula</div>
+            <h2 id="breakdown-title">Breakdown per kata</h2>
+            <div class="breakdown-list" id="breakdownList"></div>
+          </section>
+        </section>
+
+        <section class="page" id="learn" data-page="learn">
+          <section class="panel zine-panel">
+            <div class="section-kicker">Zine by Oda F.T</div>
+            <h1>OKSING: Sejarah Bahasa Prokem, Presm, Prinem, dan Pregem</h1>
+            <p>
+              Halaman ini menampilkan zine OKSING dari blog Oda. Kalau browser atau Blogger memblokir embed,
+              buka versi asli lewat tombol di bawah.
+            </p>
+            <div class="zine-actions">
+              <a class="primary-link" href="https://odakun.blogspot.com/2026/06/bahasa-rahasia-indonesia.html" target="_blank" rel="noreferrer">
+                Buka zine di blog
+              </a>
+            </div>
+            <div class="iframe-shell">
+              <iframe
+                title="Zine OKSING di blog Oda"
+                src="https://odakun.blogspot.com/2026/06/bahasa-rahasia-indonesia.html"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </section>
+        </section>
+
+        <section class="page" id="quiz" data-page="quiz">
+          <section class="panel quiz-panel">
+            <div class="section-kicker">Latihan</div>
+            <h1>Quiz OKSING</h1>
+            <p>Latihan acak dari kamus dan contoh OKSING. Mode, kata, dan pertanyaan akan berganti otomatis.</p>
+
+            <div class="quiz-card">
+              <div class="quiz-meta" id="quizMeta"></div>
+              <div class="quiz-question" id="quizQuestion"></div>
+              <label class="text-label" for="quizAnswer">
+                <span>Jawaban</span>
+                <input id="quizAnswer" type="text" autocomplete="off" spellcheck="false" />
+              </label>
+              <div class="action-row">
+                <button class="primary-btn" id="checkQuizBtn" type="button">Cek jawaban</button>
+                <button class="ghost-btn" id="nextQuizBtn" type="button">Soal baru</button>
+              </div>
+              <div class="quiz-feedback" id="quizFeedback"></div>
+            </div>
+          </section>
+        </section>
+
+        <section class="page" id="rules" data-page="rules">
+          <section class="panel rules-panel">
+            <div class="section-kicker">Rules engine</div>
+            <h1>Formula OKSING</h1>
+            <div class="rules-grid">
+              <article>
+                <h2>Prokem</h2>
+                <p>Singkat kata dulu, lalu sisipkan <code>ok</code>. Kamus populer selalu diprioritaskan.</p>
+                <pre>makan -> mak -> m-ok-ak = mokak</pre>
+              </article>
+              <article>
+                <h2>Prinem</h2>
+                <p>Sisipkan <code>in</code> sebelum vokal. Kata satu suku seperti <code>sih</code>, <code>loh</code>, <code>lu</code>, dan <code>wow</code> dibiarkan asli.</p>
+                <pre>aku = in-a-k-in-u = inakinu
+kacau = k-in-a-c-in-au = kinacinau
+bui = b-in-u-in-i = binuini</pre>
+              </article>
+              <article>
+                <h2>Presm</h2>
+                <p>Olah suku kata terakhir memakai pola <code>s</code>. Kata satu suku kata seperti <code>sih</code>, <code>kan</code>, dan <code>loh</code> dibiarkan asli.</p>
+                <pre>jalan = ja-s-la-s-an = jaslasan
+doa -> dowa = do-s-wa-s-a = doswasa</pre>
+              </article>
+              <article>
+                <h2>Pregem</h2>
+                <p>Setiap vokal diberi <code>g + vokal</code>. Kata panjang dengan dua vokal akhir melewati vokal terakhir.</p>
+                <pre>kalau = ka-ga-la-ga-u = kagalagau
+bui -> buwi = bu-gu-wi-gi = buguwigi</pre>
+              </article>
+            </div>
+          </section>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>OKSING GEN by Oda F.T</span>
+        <span>Open source translator for Prokem, Prinem, Pregem & Presm.</span>
+      </footer>
+    </div>
+
+    <script src="./src/engine.js"></script>
+    <script src="./src/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "oksing-gen",
+  "version": "0.1.0",
+  "private": false,
+  "description": "OKSING GEN: Prokem, Prinem, Pregem & Presm Translator by Oda F.T.",
+  "homepage": ".",
+  "scripts": {
+    "start": "echo \"Open index.html directly or deploy this folder to Vercel.\"",
+    "test": "echo \"See TEST_CASES.md for rule regression examples.\""
+  },
+  "keywords": [
+    "oksing",
+    "prokem",
+    "prinem",
+    "pregem",
+    "presm",
+    "translator",
+    "bahasa-gaul"
+  ],
+  "author": "Oda F.T",
+  "license": "UNLICENSED"
+}
